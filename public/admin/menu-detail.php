@@ -50,6 +50,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         redirect('/admin/menu-detail.php?id=' . $id);
     }
 
+    if ($action === 'remove-entry') {
+        if ($menu['status'] !== 'draft') {
+            flash('error', 'Only draft menu entries can be removed. Mark released menu entries unavailable instead.');
+            redirect('/admin/menu-detail.php?id=' . $id);
+        }
+
+        $entryId = int_param('entry_id');
+        $entry = db_fetch('SELECT id FROM menu_entries WHERE id = ? AND menu_id = ?', [$entryId, $id]);
+        if (!$entry) {
+            flash('error', 'Menu entry not found.');
+            redirect('/admin/menu-detail.php?id=' . $id);
+        }
+
+        $orderItem = db_fetch('SELECT id FROM order_items WHERE menu_entry_id = ? LIMIT 1', [$entryId]);
+        if ($orderItem) {
+            flash('error', 'This menu entry is used by an order and cannot be removed. Mark it unavailable instead.');
+            redirect('/admin/menu-detail.php?id=' . $id);
+        }
+
+        db_execute('DELETE FROM menu_entries WHERE id = ? AND menu_id = ?', [$entryId, $id]);
+        flash('success', 'Item removed from menu.');
+        redirect('/admin/menu-detail.php?id=' . $id);
+    }
+
     if ($action === 'update-entries') {
         foreach ($_POST['entries'] ?? [] as $entryId => $entryData) {
             db_execute('UPDATE menu_entries SET price_cents = ?, available = ?, sort_order = ?, updated_at = ? WHERE id = ? AND menu_id = ?', [

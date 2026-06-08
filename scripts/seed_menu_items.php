@@ -134,8 +134,31 @@ $items = [
 $inserted = 0;
 $skipped = 0;
 $imageUpdates = 0;
+$retired = 0;
 $warnings = [];
 $now = now_text();
+
+foreach (['Smoke Item'] as $retiredName) {
+    $item = db_fetch('SELECT id FROM menu_items WHERE name = ?', [$retiredName]);
+    if (!$item) {
+        continue;
+    }
+
+    $orderItem = db_fetch(
+        'SELECT oi.id FROM order_items oi JOIN menu_entries me ON me.id = oi.menu_entry_id WHERE me.menu_item_id = ? LIMIT 1',
+        [(int) $item['id']]
+    );
+
+    if ($orderItem) {
+        db_execute('UPDATE menu_items SET active = 0, updated_at = ? WHERE id = ?', [$now, (int) $item['id']]);
+        db_execute('UPDATE menu_entries SET available = 0, updated_at = ? WHERE menu_item_id = ?', [$now, (int) $item['id']]);
+    } else {
+        db_execute('DELETE FROM menu_entries WHERE menu_item_id = ?', [(int) $item['id']]);
+        db_execute('DELETE FROM menu_items WHERE id = ?', [(int) $item['id']]);
+    }
+
+    $retired++;
+}
 
 foreach ($items as $item) {
     $imagePath = seed_asset_path($item['slug'], $warnings);
@@ -165,7 +188,7 @@ foreach ($items as $item) {
     $inserted++;
 }
 
-echo "Seeded menu items. Inserted: {$inserted}. Existing: {$skipped}. Image paths set: {$imageUpdates}.\n";
+echo "Seeded menu items. Inserted: {$inserted}. Existing: {$skipped}. Image paths set: {$imageUpdates}. Retired legacy items: {$retired}.\n";
 echo "Seed image attribution notes: public/assets/images/menu-items/seed/ATTRIBUTION.md\n";
 
 foreach ($warnings as $warning) {

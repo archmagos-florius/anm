@@ -25,7 +25,10 @@
     --shadow-soft: 0 1rem 2.5rem rgba(65, 40, 24, 0.1);
     --radius-large: 1.2rem;
     --radius-medium: 0.85rem;
-    --pico-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --pico-font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --pico-font-family: var(--pico-font-family-sans-serif);
+    --pico-font-size: 97.5%;
+    --pico-line-height: 1.55;
     --pico-background-color: var(--color-cream);
     --pico-color: var(--color-espresso);
     --pico-h1-color: var(--color-espresso);

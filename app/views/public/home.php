@@ -9,7 +9,7 @@
     <?php else: ?>
         <section class="hero menu-hero">
             <div>
-                <p class="eyebrow">Fresh this menu</p>
+                <p class="eyebrow"><?= $orderingClosed ? 'Menu closed' : 'Now serving' ?></p>
                 <h1>Homemade Peruvian comfort food, released fresh by menu.</h1>
                 <p>Order rustic, home-style dishes from <?= e(site_name()) ?> while this menu is open. Choose pickup or delivery at checkout.</p>
                 <div class="hero-actions">

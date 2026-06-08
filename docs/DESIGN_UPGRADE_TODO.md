@@ -78,6 +78,13 @@ This plan tracks visual and UX polish after the functional MVP. Keep the site si
 - ~~Format printed release, cutoff, and order dates into friendly readable text.~~
 - Review all button labels for clarity.
 
+## Future Feature: Catering Page
+
+- Add a customer-facing catering page that showcases all reusable menu items outside the current orderable menu.
+- Load items page by page, 6 items at a time.
+- Keep the implementation simple with regular links or form posts; avoid adding a frontend framework.
+- Reuse existing menu card/image styling where practical, but make clear that this page is informational unless an item is on the current orderable menu.
+
 ## Phase 8: Final Visual QA
 
 - Test in Chrome.

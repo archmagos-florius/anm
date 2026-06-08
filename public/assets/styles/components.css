@@ -39,9 +39,9 @@
     max-width: 13ch;
     margin-bottom: 0.75rem;
     color: var(--color-espresso);
-    font-size: clamp(2rem, 6vw, 4rem);
-    letter-spacing: -0.045em;
-    line-height: 0.95;
+    font-size: clamp(1.9rem, 4.75vw, 3.1rem);
+    letter-spacing: -0.035em;
+    line-height: 1;
 }
 
 .hero p,
@@ -52,7 +52,7 @@
 .compact-hero h1,
 .confirmation-hero h1 {
     max-width: 18ch;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.85rem, 4.25vw, 2.45rem);
 }
 
 .eyebrow {
@@ -113,7 +113,7 @@
         repeating-linear-gradient(45deg, rgba(169, 79, 50, 0.12) 0 0.45rem, transparent 0.45rem 0.9rem),
         linear-gradient(135deg, #e7c591, #c98a55 48%, #667348);
     color: var(--color-inverse);
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-shadow: 0 1px 1px rgba(45, 32, 24, 0.38);
@@ -133,7 +133,7 @@
 
 .menu-card h2 {
     margin-bottom: 0.45rem;
-    font-size: 1.3rem;
+    font-size: 1.22rem;
 }
 
 .menu-price {
@@ -142,7 +142,7 @@
     border-radius: 999px;
     background: rgba(217, 154, 43, 0.18);
     color: var(--color-clay-dark);
-    font-weight: 900;
+    font-weight: 800;
     white-space: nowrap;
 }
 

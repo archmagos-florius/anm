@@ -33,10 +33,11 @@
 </section>
 
 <h2>Menu Entries</h2>
+<?php $canRemoveEntries = $menu['status'] === 'draft'; ?>
 <form method="post" action="/admin/menu-detail.php?id=<?= e($menu['id']) ?>&action=update-entries">
     <?= csrf_field() ?>
     <table>
-        <thead><tr><th>Item</th><th>Price</th><th>Sort</th><th>Available</th></tr></thead>
+        <thead><tr><th>Item</th><th>Price</th><th>Sort</th><th>Available</th><?php if ($canRemoveEntries): ?><th>Remove</th><?php endif; ?></tr></thead>
         <tbody>
             <?php foreach ($entries as $entry): ?>
                 <tr>
@@ -44,12 +45,25 @@
                     <td><input name="entries[<?= e($entry['id']) ?>][price]" value="<?= e(cents_to_input((int) $entry['price_cents'])) ?>"></td>
                     <td><input type="number" name="entries[<?= e($entry['id']) ?>][sort_order]" value="<?= e($entry['sort_order']) ?>"></td>
                     <td><input type="checkbox" name="entries[<?= e($entry['id']) ?>][available]" value="1" <?= checked((int) $entry['available'] === 1) ?>></td>
+                    <?php if ($canRemoveEntries): ?>
+                        <td>
+                            <button type="submit" class="secondary" form="remove-entry-<?= e($entry['id']) ?>">Remove</button>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
     <button type="submit">Save entries</button>
 </form>
+<?php if ($canRemoveEntries): ?>
+    <?php foreach ($entries as $entry): ?>
+        <form id="remove-entry-<?= e($entry['id']) ?>" method="post" action="/admin/menu-detail.php?id=<?= e($menu['id']) ?>&action=remove-entry" class="inline-form">
+            <?= csrf_field() ?>
+            <input type="hidden" name="entry_id" value="<?= e($entry['id']) ?>">
+        </form>
+    <?php endforeach; ?>
+<?php endif; ?>
 
 <h2>Orders</h2>
 <?php if (!$orders): ?><p>No orders yet.</p><?php else: ?>
