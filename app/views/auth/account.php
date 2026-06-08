@@ -67,7 +67,7 @@
             <?php foreach ($orders as $order): ?>
                 <tr>
                     <td>#<?= e($order['id']) ?></td>
-                    <td><?= e($order['created_at']) ?></td>
+                    <td><?= e(format_datetime($order['created_at'])) ?></td>
                     <td><?= e(status_label($order['status'])) ?></td>
                     <td><?= e(money((int) $order['total_cents'])) ?></td>
                 </tr>

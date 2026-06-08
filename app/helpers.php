@@ -56,6 +56,32 @@ function now_text(): string
     return date('Y-m-d H:i:s');
 }
 
+function parse_app_datetime(string $value): ?DateTimeImmutable
+{
+    $value = trim($value);
+    if ($value === '') {
+        return null;
+    }
+
+    try {
+        return new DateTimeImmutable($value);
+    } catch (Throwable) {
+        return null;
+    }
+}
+
+function format_date(string $value): string
+{
+    $date = parse_app_datetime($value);
+    return $date ? $date->format('F j, Y') : $value;
+}
+
+function format_datetime(string $value): string
+{
+    $date = parse_app_datetime($value);
+    return $date ? $date->format('F j, Y \a\t g:i A') : $value;
+}
+
 function money(int $cents): string
 {
     return '$' . number_format($cents / 100, 2);

@@ -5,7 +5,7 @@
     <article>
         <h2>Current Menu</h2>
         <p><strong><?= e($menu['title']) ?></strong></p>
-        <p>Cutoff: <?= e($menu['cutoff_at']) ?> <?= cutoff_passed($menu) ? '(closed)' : '' ?></p>
+        <p>Cutoff: <?= e(format_datetime($menu['cutoff_at'])) ?> <?= cutoff_passed($menu) ? '(closed)' : '' ?></p>
         <p><a href="/admin/menu-detail.php?id=<?= e($menu['id']) ?>" role="button">Open menu dashboard</a></p>
     </article>
 <?php else: ?>

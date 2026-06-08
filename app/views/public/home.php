@@ -20,8 +20,8 @@
             <aside class="menu-meta-card" aria-label="Current menu details">
                 <span class="badge">Current menu</span>
                 <h2><?= e($menu['title']) ?></h2>
-                <p><strong>Release date</strong><br><?= e($menu['release_date']) ?></p>
-                <p><strong>Order cutoff</strong><br><?= e($menu['cutoff_at']) ?></p>
+                <p><strong>Release date</strong><br><?= e(format_date($menu['release_date'])) ?></p>
+                <p><strong>Order cutoff</strong><br><?= e(format_datetime($menu['cutoff_at'])) ?></p>
             </aside>
         </section>
         <?php if ($orderingClosed): ?>

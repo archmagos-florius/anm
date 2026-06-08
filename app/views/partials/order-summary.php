@@ -11,6 +11,7 @@ $total = $summaryOrder ? (int) $summaryOrder['total_cents'] : $subtotal;
         <div class="summary-meta">
             <p><strong>Status</strong><br><?= e(status_label($summaryOrder['status'])) ?></p>
             <p><strong>Fulfillment</strong><br><?= e(status_label($summaryOrder['fulfillment_type'])) ?></p>
+            <p><strong>Placed</strong><br><?= e(format_datetime($summaryOrder['created_at'])) ?></p>
         </div>
         <?php if ($summaryOrder['fulfillment_type'] === 'delivery'): ?>
             <p><strong>Delivery address:</strong><br><?= nl2br(e($summaryOrder['delivery_address'])) ?></p>

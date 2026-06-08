@@ -46,6 +46,9 @@ function order_email_html(array $order, array $items): string
 {
     $lines = [];
     $lines[] = '<h1>Order #' . e($order['id']) . '</h1>';
+    if (!empty($order['created_at'])) {
+        $lines[] = '<p><strong>Placed:</strong> ' . e(format_datetime($order['created_at'])) . '</p>';
+    }
     $lines[] = '<p><strong>Status:</strong> ' . e(status_label($order['status'])) . '</p>';
     $lines[] = '<p><strong>Name:</strong> ' . e($order['customer_name']) . '<br><strong>Email:</strong> ' . e($order['customer_email']) . '<br><strong>Phone:</strong> ' . e($order['customer_phone']) . '</p>';
     $lines[] = '<p><strong>Fulfillment:</strong> ' . e(status_label($order['fulfillment_type'])) . '</p>';

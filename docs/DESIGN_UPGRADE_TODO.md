@@ -74,7 +74,7 @@ This plan tracks visual and UX polish after the functional MVP. Keep the site si
 - Write delivery instructions.
 - Write confirmation page thank-you copy.
 - Write better closed-menu message.
-- Format printed release, cutoff, and order dates into friendly readable text.
+- ~~Format printed release, cutoff, and order dates into friendly readable text.~~
 - Review all button labels for clarity.
 
 ## Phase 8: Final Visual QA
@@ -113,6 +113,7 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 ### Homepage Banner Image
 
 - Add support for a homepage banner/hero image while preserving the current text-first hero layout.
+- Create a simple front-page hero image asset that fits the rustic Peruvian food direction.
 - Use a local static asset path such as `public/assets/images/home-hero-placeholder.*` until real photography exists.
 - Prefer a warm food/kitchen banner crop that supports the rustic Peruvian direction.
 - Keep the hero usable when no image exists: CSS gradient/pattern fallback should remain.
@@ -123,6 +124,7 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 ### Favicon And Logos
 
 - Add brand assets for `Akisitonoma`: favicon, header logo/mark, and touch icon.
+- Create a simple SVG chili pepper logo/mark that can work in the header and favicon set.
 - Until final design assets exist, use a simple text/initial mark based on the current `A` brand mark.
 - Suggested static paths:
   - `public/favicon.ico`
@@ -134,6 +136,14 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 - Keep logo markup accessible with clear home-link labeling.
 - Verify the favicon displays in Chrome/Safari and the header remains clean on mobile.
 
+### Seed Content
+
+- Create a simple menu-item seed script for local/demo database setup.
+- Use AI-assisted seed names and descriptions for realistic Peruvian catering dishes, then review for tone and accuracy.
+- Download a small set of free-to-use food images with `curl` or a similar CLI tool, saving license/source notes alongside the seed data.
+- Store seeded images under `public/uploads/menu-items/` and keep the script safe to rerun without duplicating records.
+- Prefer stable image URLs from clearly licensed sources; do not rely on hotlinked external images in production pages.
+
 ### Suggested Implementation Order
 
 1. Add static brand asset folders and placeholder SVG logo/favicon.
@@ -141,7 +151,8 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 3. Add homepage banner image support with fallback styling.
 4. ~~Add dark/light theme tokens.~~
 5. ~~Decide and implement optional theme toggle.~~
-6. Test desktop and mobile in both themes.
+6. Add demo menu-item seed content with local images.
+7. Test desktop and mobile in both themes.
 
 ## Constraints
 

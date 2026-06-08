@@ -1,6 +1,9 @@
 <?php require dirname(__DIR__) . '/partials/admin-nav.php'; ?>
-<h1>Order #<?= e($order['id']) ?></h1>
-<p>Menu: <?= e($order['menu_title']) ?> | Created: <?= e($order['created_at']) ?></p>
+<div class="actions">
+    <h1>Order #<?= e($order['id']) ?></h1>
+    <a href="/admin/email-preview.php?id=<?= e($order['id']) ?>" role="button" class="secondary">Preview email</a>
+</div>
+<p>Menu: <?= e($order['menu_title']) ?> | Created: <?= e(format_datetime($order['created_at'])) ?></p>
 
 <?php if ($order['fulfillment_type'] === 'delivery' && !empty($order['delivery_address'])): ?>
     <p><a href="<?= e(maps_directions_url($order['delivery_address'])) ?>" target="_blank" rel="noopener" role="button">Open Google Maps directions</a></p>
