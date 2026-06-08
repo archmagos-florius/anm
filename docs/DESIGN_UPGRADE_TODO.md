@@ -104,6 +104,7 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 
 - ~~Add a proper light/dark theme system without adding a frontend framework.~~
 - ~~Decide whether the default should follow `prefers-color-scheme` or default to light.~~
+- Revisit the current font stack and choose a cleaner, more minimal typeface because the existing system font treatment feels chunky.
 - Consider a simple theme toggle in the header if approved.
 - If a toggle is added, use a small progressive-enhancement script and store preference in `localStorage`; the site should still render correctly without JavaScript.
 - ~~Update `public/assets/styles/theme.css` so color tokens exist for both light and dark modes.~~
