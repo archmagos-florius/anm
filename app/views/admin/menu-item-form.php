@@ -7,7 +7,13 @@
     <label>Description <textarea name="description"><?= e(posted('description', $item['description'] ?? '')) ?></textarea></label>
     <label>Price <input name="price" value="<?= e(posted('price', isset($item) ? cents_to_input((int) $item['price_cents']) : '')) ?>" required></label>
     <label>Image <input type="file" name="image" accept="image/jpeg,image/png,image/webp"></label>
-    <?php if (!empty($item['image_path'])): ?><img class="menu-image" src="<?= e($item['image_path']) ?>" alt="<?= e($item['name']) ?>"><?php endif; ?>
+    <p class="form-help">Uploading a new image replaces this menu item's image path. Seed asset files stay in <code>public/assets/images/menu-items/seed/</code>; custom uploads are saved under <code>public/uploads/menu-items/</code>.</p>
+    <?php if (!empty($item['image_path'])): ?>
+        <figure class="admin-image-preview">
+            <img class="menu-image" src="<?= e($item['image_path']) ?>" alt="<?= e($item['name']) ?>">
+            <figcaption><?= e(menu_item_image_source_label($item['image_path'] ?? null)) ?>: <?= e($item['image_path']) ?></figcaption>
+        </figure>
+    <?php endif; ?>
     <label><input type="checkbox" name="active" value="1" <?= checked((int) ($item['active'] ?? 1) === 1) ?>> Active</label>
     <button type="submit">Save</button>
 </form>

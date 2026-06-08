@@ -48,7 +48,23 @@ Or:
 make migrate
 ```
 
-7. Create the first admin:
+7. Seed reusable demo menu items:
+
+```bash
+php scripts/seed_menu_items.php
+```
+
+Or:
+
+```bash
+make seed-menu-items
+```
+
+This seeds Peruvian and Mexican reusable menu items only. It does not create a current public menu, so an admin still chooses which items are orderable.
+
+Seed images are committed under `public/assets/images/menu-items/seed/`, and source/license notes live in `public/assets/images/menu-items/seed/ATTRIBUTION.md`. The script does not download images during setup. It is safe to rerun; existing menu items are not duplicated.
+
+8. Create the first admin:
 
 ```bash
 php scripts/seed_admin.php admin@example.com "Admin Name" "change-this-password"
@@ -60,7 +76,7 @@ Or:
 make seed-admin EMAIL=admin@example.com NAME="Admin Name" PASSWORD="change-this-password"
 ```
 
-8. Start the local PHP server:
+9. Start the local PHP server:
 
 ```bash
 php -S localhost:8000 -t public
@@ -72,7 +88,7 @@ Or:
 make serve
 ```
 
-9. Open `http://localhost:8000`.
+10. Open `http://localhost:8000`.
 
 ## How To Use The App
 
@@ -153,6 +169,7 @@ make help
 make install
 make setup
 make migrate
+make seed-menu-items
 make seed-admin EMAIL=admin@example.com NAME="Admin Name" PASSWORD="change-this-password"
 make backup
 make serve
@@ -169,3 +186,19 @@ Production should run this daily with cron.
 - Ensure `public/uploads/menu-items/` is writable by PHP.
 - Use HTTPS through Caddy.
 - Restrict the Google Maps API key by domain.
+
+## Deployment Setup
+
+Run these commands on a new server after PHP, Caddy, and Composer are installed:
+
+```bash
+composer install --no-dev
+cp app/config.example.php app/config.php
+php scripts/migrate.php
+php scripts/seed_menu_items.php
+php scripts/seed_admin.php admin@example.com "Admin Name" "change-this-password"
+```
+
+Before launch, edit `app/config.php` with real production values for timezone, email, SMTP, Google Maps, pickup instructions, and delivery instructions.
+
+`php scripts/seed_menu_items.php` can be rerun after deployment without duplicating menu items. It seeds reusable menu item records with paths to committed static seed images only; it does not publish a menu or change which menu is current.

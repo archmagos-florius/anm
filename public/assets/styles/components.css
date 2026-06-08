@@ -189,6 +189,24 @@
     vertical-align: middle;
 }
 
+.admin-menu-thumb {
+    width: 4.5rem;
+    height: 3.4rem;
+    object-fit: cover;
+    border-radius: var(--radius-medium);
+}
+
+.admin-image-preview {
+    max-width: 28rem;
+    margin: 0 0 1rem;
+}
+
+.admin-image-preview figcaption,
+.form-help {
+    color: var(--pico-muted-color);
+    font-size: 0.92rem;
+}
+
 .order-summary-card h2,
 .checkout-section h2,
 .checkout-section legend {

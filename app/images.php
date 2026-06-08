@@ -63,3 +63,42 @@ function save_menu_item_image(array $file): ?string
 
     return $relativePath;
 }
+
+function menu_item_image_source_label(?string $relativePath): string
+{
+    if (!$relativePath) {
+        return 'No image';
+    }
+
+    if (str_starts_with($relativePath, '/assets/images/menu-items/seed/')) {
+        return 'Seed asset';
+    }
+
+    if (is_uploaded_menu_item_image($relativePath)) {
+        return 'Uploaded image';
+    }
+
+    return 'Custom path';
+}
+
+function is_uploaded_menu_item_image(?string $relativePath): bool
+{
+    if (!$relativePath || !str_starts_with($relativePath, '/uploads/menu-items/')) {
+        return false;
+    }
+
+    $suffix = substr($relativePath, strlen('/uploads/menu-items/'));
+    return $suffix !== '' && !str_contains($suffix, '/');
+}
+
+function delete_menu_item_upload(?string $relativePath): void
+{
+    if (!is_uploaded_menu_item_image($relativePath)) {
+        return;
+    }
+
+    $fullPath = dirname(__DIR__) . '/public' . $relativePath;
+    if (is_file($fullPath)) {
+        unlink($fullPath);
+    }
+}

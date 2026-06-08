@@ -4,10 +4,23 @@
     <p>No menu items yet.</p>
 <?php else: ?>
     <table>
-        <thead><tr><th>Name</th><th>Price</th><th>Active</th><th></th></tr></thead>
+        <thead><tr><th>Image</th><th>Name</th><th>Price</th><th>Source</th><th>Active</th><th></th></tr></thead>
         <tbody>
             <?php foreach ($items as $item): ?>
-                <tr><td><?= e($item['name']) ?></td><td><?= e(money((int) $item['price_cents'])) ?></td><td><?= (int) $item['active'] === 1 ? 'Yes' : 'No' ?></td><td><a href="/admin/menu-item-form.php?id=<?= e($item['id']) ?>">Edit</a></td></tr>
+                <tr>
+                    <td>
+                        <?php if (!empty($item['image_path'])): ?>
+                            <img class="admin-menu-thumb" src="<?= e($item['image_path']) ?>" alt="<?= e($item['name']) ?>">
+                        <?php else: ?>
+                            <span class="muted">No image</span>
+                        <?php endif; ?>
+                    </td>
+                    <td><?= e($item['name']) ?></td>
+                    <td><?= e(money((int) $item['price_cents'])) ?></td>
+                    <td><?= e(menu_item_image_source_label($item['image_path'] ?? null)) ?></td>
+                    <td><?= (int) $item['active'] === 1 ? 'Yes' : 'No' ?></td>
+                    <td><a href="/admin/menu-item-form.php?id=<?= e($item['id']) ?>">Edit</a></td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>

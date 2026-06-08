@@ -20,7 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Price must be greater than zero.';
     }
 
-    $imagePath = $item['image_path'] ?? null;
+    $oldImagePath = $item['image_path'] ?? null;
+    $imagePath = $oldImagePath;
+    $uploadedPath = null;
     try {
         $uploadedPath = save_menu_item_image($_FILES['image'] ?? []);
         if ($uploadedPath !== null) {
@@ -42,6 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $now,
                 $id,
             ]);
+            if ($uploadedPath !== null && $uploadedPath !== $oldImagePath) {
+                delete_menu_item_upload($oldImagePath);
+            }
             flash('success', 'Menu item updated.');
         } else {
             db_execute('INSERT INTO menu_items (name, description, price_cents, image_path, active, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)', [
