@@ -65,6 +65,7 @@ This TODO list is ordered by recommended implementation sequence. Keep the build
 - Add create/edit menu form.
 - Support title, release date, cutoff time, status, and delivery fee.
 - Allow admin to attach existing menu items.
+- Allow admin to remove/detach menu items from an unreleased menu so unwanted entries do not get stuck on a menu.
 - Allow per-menu item price snapshot.
 - Allow menu entry sort order.
 - Allow admin to mark entries unavailable.

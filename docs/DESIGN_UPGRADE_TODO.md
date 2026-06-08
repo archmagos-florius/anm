@@ -63,6 +63,7 @@ This plan tracks visual and UX polish after the functional MVP. Keep the site si
 - Test checkout on phone width.
 - Test admin dashboard on phone width.
 - Test order detail page on phone width.
+- Add a simple burger menu breakpoint for medium-width navigation before header links wrap awkwardly.
 - Adjust tables that overflow badly.
 - Make primary actions easy to tap.
 
@@ -112,14 +113,14 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 
 ### Homepage Banner Image
 
-- Add support for a homepage banner/hero image while preserving the current text-first hero layout.
-- Create a simple front-page hero image asset that fits the rustic Peruvian food direction.
-- Use a local static asset path such as `public/assets/images/home-hero-placeholder.*` until real photography exists.
-- Prefer a warm food/kitchen banner crop that supports the rustic Peruvian direction.
-- Keep the hero usable when no image exists: CSS gradient/pattern fallback should remain.
+- ~~Add support for a homepage banner/hero image while preserving the current text-first hero layout.~~
+- ~~Create a simple front-page hero image asset that fits the rustic Peruvian food direction.~~
+- ~~Use a local static asset path such as `public/assets/images/home-hero-placeholder.*` until real photography exists.~~ Implemented as optimized WebP assets generated from an AI source image.
+- ~~Prefer a warm food/kitchen banner crop that supports the rustic Peruvian direction.~~
+- ~~Keep the hero usable when no image exists: CSS gradient/pattern fallback should remain.~~
 - Suggested files to touch: `app/views/public/home.php`, `public/assets/styles/pages.css`, `public/assets/styles/responsive.css`, and possibly `public/assets/images/`.
-- Mobile behavior: image should stack below or above copy, crop cleanly, and not push the menu too far down.
-- Include meaningful `alt` text if the image is content; use empty `alt=""` if it is decorative.
+- ~~Mobile behavior: image should stack below or above copy, crop cleanly, and not push the menu too far down.~~ Implemented as a decorative CSS background with a smaller mobile asset.
+- ~~Include meaningful `alt` text if the image is content; use empty `alt=""` if it is decorative.~~ Implemented as a decorative CSS background, so no image markup is needed.
 
 ### Favicon And Logos
 
@@ -148,7 +149,7 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 
 1. ~~Add static brand asset folders and placeholder SVG logo/favicon.~~
 2. ~~Wire SVG favicon link in the layout.~~ Raster touch icon remains deferred.
-3. Add homepage banner image support with fallback styling.
+3. ~~Add homepage banner image support with fallback styling.~~
 4. ~~Add dark/light theme tokens.~~
 5. ~~Decide and implement optional theme toggle.~~
 6. Add demo menu-item seed content with local images.

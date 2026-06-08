@@ -4,6 +4,21 @@
     margin-top: 0.5rem;
 }
 
+.home-page .hero {
+    background:
+        linear-gradient(90deg, rgba(255, 249, 238, 0.96) 0%, rgba(255, 249, 238, 0.88) 54%, rgba(255, 249, 238, 0.68) 100%),
+        linear-gradient(135deg, rgba(217, 154, 43, 0.24), rgba(169, 79, 50, 0.1) 45%, rgba(102, 115, 72, 0.12)),
+        url("/assets/images/home-hero-bg.webp"),
+        var(--color-card);
+    background-position: center;
+    background-size: cover;
+}
+
+.home-page .hero > * {
+    position: relative;
+    z-index: 1;
+}
+
 .menu-hero {
     display: grid;
     grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.75fr);
@@ -18,6 +33,7 @@
     background:
         linear-gradient(135deg, rgba(217, 154, 43, 0.18), transparent 45%),
         var(--color-surface-accent);
+    box-shadow: 0 0.75rem 2rem rgba(65, 40, 24, 0.1);
 }
 
 .menu-meta-card h2 {
@@ -110,4 +126,16 @@
     background:
         linear-gradient(135deg, rgba(102, 115, 72, 0.08), transparent 38%),
         var(--color-card);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .home-page .hero {
+        background:
+            linear-gradient(90deg, rgba(42, 33, 25, 0.96) 0%, rgba(42, 33, 25, 0.9) 54%, rgba(42, 33, 25, 0.72) 100%),
+            linear-gradient(135deg, rgba(207, 117, 86, 0.2), rgba(223, 169, 70, 0.08) 45%, rgba(166, 180, 122, 0.1)),
+            url("/assets/images/home-hero-bg.webp"),
+            var(--color-card);
+        background-position: center;
+        background-size: cover;
+    }
 }

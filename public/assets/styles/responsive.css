@@ -48,6 +48,28 @@
         border-radius: 1rem;
     }
 
+    .home-page .hero {
+        background:
+            linear-gradient(180deg, rgba(255, 249, 238, 0.96) 0%, rgba(255, 249, 238, 0.88) 100%),
+            linear-gradient(135deg, rgba(217, 154, 43, 0.22), rgba(102, 115, 72, 0.12)),
+            url("/assets/images/home-hero-bg-small.webp"),
+            var(--color-card);
+        background-position: center;
+        background-size: cover;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .home-page .hero {
+            background:
+                linear-gradient(180deg, rgba(42, 33, 25, 0.96) 0%, rgba(42, 33, 25, 0.9) 100%),
+                linear-gradient(135deg, rgba(207, 117, 86, 0.18), rgba(166, 180, 122, 0.1)),
+                url("/assets/images/home-hero-bg-small.webp"),
+                var(--color-card);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
     .hero-actions a[role="button"] {
         width: 100%;
     }
