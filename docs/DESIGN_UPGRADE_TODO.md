@@ -123,17 +123,17 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 
 ### Favicon And Logos
 
-- Add brand assets for `Akisitonoma`: favicon, header logo/mark, and touch icon.
-- Create a simple SVG chili pepper logo/mark that can work in the header and favicon set.
-- Until final design assets exist, use a simple text/initial mark based on the current `A` brand mark.
+- ~~Add SVG brand assets for `Akisitonoma`: favicon and header logo/mark.~~ Raster touch icon remains deferred.
+- ~~Create a simple SVG chili pepper logo/mark that can work in the header and favicon set.~~
+- ~~Until final design assets exist, use a simple text/initial mark based on the current `A` brand mark.~~ Replaced with SVG pepper mark.
 - Suggested static paths:
   - `public/favicon.ico`
   - `public/assets/brand/favicon.svg`
   - `public/assets/brand/apple-touch-icon.png`
   - `public/assets/brand/logo.svg`
-- Add favicon and touch-icon links in `app/views/layout-top.php`.
-- Update `app/views/partials/header.php` if replacing the CSS-only `A` mark with an SVG logo.
-- Keep logo markup accessible with clear home-link labeling.
+- ~~Add SVG favicon link in `app/views/layout-top.php`.~~ Raster touch icon remains deferred.
+- ~~Update `app/views/partials/header.php` if replacing the CSS-only `A` mark with an SVG logo.~~
+- ~~Keep logo markup accessible with clear home-link labeling.~~
 - Verify the favicon displays in Chrome/Safari and the header remains clean on mobile.
 
 ### Seed Content
@@ -146,8 +146,8 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 
 ### Suggested Implementation Order
 
-1. Add static brand asset folders and placeholder SVG logo/favicon.
-2. Wire favicon/touch-icon links in the layout.
+1. ~~Add static brand asset folders and placeholder SVG logo/favicon.~~
+2. ~~Wire SVG favicon link in the layout.~~ Raster touch icon remains deferred.
 3. Add homepage banner image support with fallback styling.
 4. ~~Add dark/light theme tokens.~~
 5. ~~Decide and implement optional theme toggle.~~

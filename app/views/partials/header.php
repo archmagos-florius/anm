@@ -3,7 +3,9 @@
         <ul>
             <li>
                 <a class="site-brand" href="/" aria-label="<?= e(site_name()) ?> home">
-                    <span class="site-brand-mark">A</span>
+                    <span class="site-brand-mark" aria-hidden="true">
+                        <img src="/assets/brand/logo.svg" alt="" width="44" height="44">
+                    </span>
                     <span>
                         <strong><?= e(site_name()) ?></strong>
                         <small>Peruvian homemade catering</small>
