@@ -55,6 +55,7 @@ This plan tracks visual and UX polish after the functional MVP. Keep the site si
 - Improve menu entry editing table layout.
 - Add confirmation copy around cancel order actions.
 - Make Google Maps directions button stand out on delivery orders.
+- Remove the customer account link from the header when an admin is logged in, since admins do not need customer account access from the admin workflow.
 
 ## Phase 6: Mobile Polish
 
