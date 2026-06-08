@@ -74,6 +74,7 @@ This plan tracks visual and UX polish after the functional MVP. Keep the site si
 - Write delivery instructions.
 - Write confirmation page thank-you copy.
 - Write better closed-menu message.
+- Format printed release, cutoff, and order dates into friendly readable text.
 - Review all button labels for clarity.
 
 ## Phase 8: Final Visual QA
@@ -95,17 +96,17 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 - Business name: `Akisitonoma`.
 - Visual direction: homey rustic Peruvian cuisine, subtle cultural references, clay/olive/espresso/cream palette.
 - CSS is split under `public/assets/styles/` with `public/assets/styles.css` acting as the import manifest.
-- Current templates force Pico light mode with `data-theme="light"` in `app/views/layout-top.php`.
+- Current templates follow the system color scheme; the old forced `data-theme="light"` was removed from `app/views/layout-top.php`.
 - Keep the site server-rendered and avoid build tooling.
 
 ### Dark And Light Modes
 
-- Add a proper light/dark theme system without adding a frontend framework.
-- Decide whether the default should follow `prefers-color-scheme` or default to light.
+- ~~Add a proper light/dark theme system without adding a frontend framework.~~
+- ~~Decide whether the default should follow `prefers-color-scheme` or default to light.~~
 - Consider a simple theme toggle in the header if approved.
 - If a toggle is added, use a small progressive-enhancement script and store preference in `localStorage`; the site should still render correctly without JavaScript.
-- Update `public/assets/styles/theme.css` so color tokens exist for both light and dark modes.
-- Remove or revise the hardcoded `data-theme="light"` in `app/views/layout-top.php` once dark mode exists.
+- ~~Update `public/assets/styles/theme.css` so color tokens exist for both light and dark modes.~~
+- ~~Remove or revise the hardcoded `data-theme="light"` in `app/views/layout-top.php` once dark mode exists.~~
 - Verify cards, forms, tables, buttons, flash messages, and mobile cart rows in both modes.
 - Check contrast for clay, olive, maize, cream, and espresso combinations.
 
@@ -138,8 +139,8 @@ These items were identified after the first rustic Peruvian customer UI pass on 
 1. Add static brand asset folders and placeholder SVG logo/favicon.
 2. Wire favicon/touch-icon links in the layout.
 3. Add homepage banner image support with fallback styling.
-4. Add dark/light theme tokens.
-5. Decide and implement optional theme toggle.
+4. ~~Add dark/light theme tokens.~~
+5. ~~Decide and implement optional theme toggle.~~
 6. Test desktop and mobile in both themes.
 
 ## Constraints
