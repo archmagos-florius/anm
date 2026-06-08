@@ -1,0 +1,113 @@
+.home-page,
+.cart-layout,
+.checkout-layout {
+    margin-top: 0.5rem;
+}
+
+.menu-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.75fr);
+    gap: clamp(1rem, 4vw, 2.5rem);
+    align-items: center;
+}
+
+.menu-meta-card {
+    padding: 1.25rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-large);
+    background:
+        linear-gradient(135deg, rgba(217, 154, 43, 0.18), transparent 45%),
+        #fffaf1;
+}
+
+.menu-meta-card h2 {
+    margin-top: 0.6rem;
+}
+
+.closed-banner {
+    display: flex;
+    gap: 0.4rem;
+    flex-direction: column;
+    margin-block: 1.25rem;
+}
+
+.section-heading {
+    margin-block: 2rem 1rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+.empty-state {
+    padding: 1.5rem;
+}
+
+.cart-layout,
+.checkout-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.36fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.cart-form,
+.checkout-form {
+    margin: 0;
+}
+
+.total-card,
+.checkout-summary {
+    position: sticky;
+    top: 1rem;
+}
+
+.total-card,
+.order-summary-card,
+.checkout-section {
+    padding: 1.25rem;
+}
+
+.total-card strong {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--color-clay-dark);
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.checkout-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.checkout-section {
+    margin: 0;
+}
+
+.checkout-section h2,
+.checkout-section legend {
+    color: var(--color-espresso);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.checkout-section h2 span,
+.checkout-section legend span {
+    display: inline-grid;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 0.45rem;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--color-olive);
+    color: #fffdf7;
+    font-size: 0.85rem;
+}
+
+.delivery-section {
+    background:
+        linear-gradient(135deg, rgba(102, 115, 72, 0.08), transparent 38%),
+        var(--color-card);
+}

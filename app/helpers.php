@@ -7,6 +7,12 @@ function config(string $key, mixed $default = null): mixed
     return $GLOBALS['app_config'][$key] ?? $default;
 }
 
+function site_name(): string
+{
+    $name = (string) config('SITE_NAME', 'Akisitonoma');
+    return $name === '' || str_starts_with($name, 'TODO_') ? 'Akisitonoma' : $name;
+}
+
 function e(mixed $value): string
 {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');

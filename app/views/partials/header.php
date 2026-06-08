@@ -1,10 +1,18 @@
-<header class="container site-header">
-    <nav>
+<header class="site-header-wrap">
+    <nav class="container site-header">
         <ul>
-            <li><strong><a href="/"> <?= e(config('SITE_NAME', 'Catering')) ?></a></strong></li>
+            <li>
+                <a class="site-brand" href="/" aria-label="<?= e(site_name()) ?> home">
+                    <span class="site-brand-mark">A</span>
+                    <span>
+                        <strong><?= e(site_name()) ?></strong>
+                        <small>Peruvian homemade catering</small>
+                    </span>
+                </a>
+            </li>
         </ul>
-        <ul>
-            <li><a href="/cart.php">Cart (<?= e(cart_count()) ?>)</a></li>
+        <ul class="site-nav-links">
+            <li><a class="cart-link" href="/cart.php">Cart <span><?= e(cart_count()) ?></span></a></li>
             <?php if ($user = current_user()): ?>
                 <?php if ((int) $user['is_admin'] === 1): ?>
                     <li><a href="/admin/index.php">Admin</a></li>

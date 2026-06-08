@@ -73,3 +73,15 @@ Read these before implementation:
 - `docs/PROJECT_HANDOFF.md`
 - `docs/MVP_TODO.md`
 - `docs/MANUAL_TEST_CHECKLIST.md`
+
+## Current Design Handoff
+
+- Business name is `Akisitonoma`.
+- Active visual direction is homey rustic Peruvian cuisine with subtle clay, olive, espresso, maize, and warm cream styling.
+- Customer UI design work is being developed on branch `design/rustic-peruvian-customer-ui`.
+- CSS is organized under `public/assets/styles/`; keep `public/assets/styles.css` as the stable import manifest linked by the layout.
+- Do not add a build step for CSS. Use plain CSS files and imports.
+- Current customer-facing polish covers homepage/menu, cart, checkout, and confirmation pages. Admin, auth, and account polish are still deferred.
+- Planned next visual work is documented in `docs/DESIGN_UPGRADE_TODO.md`, especially the `Follow-Up: Theme And Brand Assets` section.
+- Upcoming visual tasks: dark/light mode support, homepage banner image support, favicon files, and logo/brand asset wiring.
+- If implementing dark mode, revisit the current `data-theme="light"` in `app/views/layout-top.php` and keep the no-JavaScript fallback usable.

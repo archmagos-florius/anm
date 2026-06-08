@@ -1,0 +1,82 @@
+body.site-body {
+    background:
+        radial-gradient(circle at top left, rgba(217, 154, 43, 0.18), transparent 22rem),
+        linear-gradient(180deg, var(--color-cream), #fff8ee 55%, var(--color-cream));
+    color: var(--color-espresso);
+}
+
+article {
+    border: 1px solid var(--color-line);
+    background: var(--color-card);
+    color: var(--color-espresso);
+    box-shadow: var(--shadow-soft);
+}
+
+button,
+[type="submit"],
+[type="button"],
+[role="button"] {
+    border-color: var(--color-clay);
+    background-color: var(--color-clay);
+    color: #fffdf7;
+}
+
+button:hover,
+button:focus,
+[type="submit"]:hover,
+[type="submit"]:focus,
+[type="button"]:hover,
+[type="button"]:focus,
+[role="button"]:hover,
+[role="button"]:focus {
+    border-color: var(--color-clay-dark);
+    background-color: var(--color-clay-dark);
+    color: #fffdf7;
+}
+
+button.secondary,
+[role="button"].secondary,
+[type="submit"].secondary,
+[type="button"].secondary {
+    border-color: rgba(102, 115, 72, 0.3);
+    background-color: rgba(102, 115, 72, 0.14);
+    color: var(--color-espresso);
+}
+
+button.secondary:hover,
+button.secondary:focus,
+[role="button"].secondary:hover,
+[role="button"].secondary:focus,
+[type="submit"].secondary:hover,
+[type="submit"].secondary:focus,
+[type="button"].secondary:hover,
+[type="button"].secondary:focus {
+    border-color: rgba(102, 115, 72, 0.46);
+    background-color: rgba(102, 115, 72, 0.22);
+    color: var(--color-espresso);
+}
+
+button:disabled,
+button[disabled] {
+    border-color: rgba(117, 78, 45, 0.18);
+    background-color: rgba(117, 78, 45, 0.12);
+    color: rgba(45, 32, 24, 0.52);
+    opacity: 1;
+}
+
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.muted {
+    color: var(--pico-muted-color);
+}
+
+.quantity-input {
+    max-width: 6rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}

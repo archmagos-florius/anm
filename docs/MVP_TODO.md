@@ -161,3 +161,7 @@ This TODO list is ordered by recommended implementation sequence. Keep the build
 - Delivery instructions.
 - Business timezone.
 - VPS provider.
+
+## Related Plans
+
+- See `docs/DESIGN_UPGRADE_TODO.md` for visual polish and UX upgrade work after the functional MVP.

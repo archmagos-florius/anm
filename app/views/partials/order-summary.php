@@ -5,11 +5,13 @@ $subtotal = $summaryOrder ? (int) $summaryOrder['subtotal_cents'] : (int) $cart[
 $deliveryFee = $summaryOrder ? (int) $summaryOrder['delivery_fee_cents'] : (int) $cart['menu']['delivery_fee_cents'];
 $total = $summaryOrder ? (int) $summaryOrder['total_cents'] : $subtotal;
 ?>
-<article>
+<article class="order-summary-card">
     <h2>Order Summary</h2>
     <?php if ($summaryOrder): ?>
-        <p><strong>Status:</strong> <?= e(status_label($summaryOrder['status'])) ?></p>
-        <p><strong>Fulfillment:</strong> <?= e(status_label($summaryOrder['fulfillment_type'])) ?></p>
+        <div class="summary-meta">
+            <p><strong>Status</strong><br><?= e(status_label($summaryOrder['status'])) ?></p>
+            <p><strong>Fulfillment</strong><br><?= e(status_label($summaryOrder['fulfillment_type'])) ?></p>
+        </div>
         <?php if ($summaryOrder['fulfillment_type'] === 'delivery'): ?>
             <p><strong>Delivery address:</strong><br><?= nl2br(e($summaryOrder['delivery_address'])) ?></p>
         <?php endif; ?>
@@ -17,15 +19,15 @@ $total = $summaryOrder ? (int) $summaryOrder['total_cents'] : $subtotal;
             <p><strong>Notes:</strong><br><?= nl2br(e($summaryOrder['customer_notes'])) ?></p>
         <?php endif; ?>
     <?php endif; ?>
-    <table>
+    <table class="responsive-table summary-table">
         <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead>
         <tbody>
             <?php foreach ($summaryRows as $row): ?>
                 <tr>
-                    <td><?= e($row['name']) ?></td>
-                    <td><?= e($row['quantity']) ?></td>
-                    <td><?= e(money((int) $row['unit'])) ?></td>
-                    <td><?= e(money((int) $row['line'])) ?></td>
+                    <td data-label="Item"><strong><?= e($row['name']) ?></strong></td>
+                    <td data-label="Qty"><?= e($row['quantity']) ?></td>
+                    <td data-label="Price"><?= e(money((int) $row['unit'])) ?></td>
+                    <td data-label="Total"><strong><?= e(money((int) $row['line'])) ?></strong></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
