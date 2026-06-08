@@ -1,0 +1,9 @@
+{
+  "name": "archmagos-florius/anm",
+  "description": "Plain PHP and SQLite catering order MVP.",
+  "type": "project",
+  "require": {
+    "php": ">=8.3",
+    "phpmailer/phpmailer": "^6.10"
+  }
+}

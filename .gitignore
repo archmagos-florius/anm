@@ -8,10 +8,12 @@ app/config.php
 # Runtime storage
 storage/*.sqlite
 storage/*.sqlite-*
+storage/*.log
 storage/backups/
 
 # Uploaded/generated assets
 public/uploads/
+vendor/
 
 # OS/editor noise
 .DS_Store
