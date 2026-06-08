@@ -1,6 +1,6 @@
 <?php $pageTitle = $pageTitle ?? site_name(); ?>
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

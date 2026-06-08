@@ -112,7 +112,7 @@
     background:
         repeating-linear-gradient(45deg, rgba(169, 79, 50, 0.12) 0 0.45rem, transparent 0.45rem 0.9rem),
         linear-gradient(135deg, #e7c591, #c98a55 48%, #667348);
-    color: #fffdf7;
+    color: var(--color-inverse);
     font-weight: 900;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -216,7 +216,7 @@
     padding: 1rem;
     border: 1px solid var(--color-line);
     border-radius: var(--radius-medium);
-    background: #fffdf7;
+    background: var(--color-surface);
     cursor: pointer;
 }
 

@@ -1,7 +1,7 @@
 body.site-body {
     background:
         radial-gradient(circle at top left, rgba(217, 154, 43, 0.18), transparent 22rem),
-        linear-gradient(180deg, var(--color-cream), #fff8ee 55%, var(--color-cream));
+        linear-gradient(180deg, var(--color-cream), var(--color-body-end) 55%, var(--color-cream));
     color: var(--color-espresso);
 }
 
@@ -18,7 +18,7 @@ button,
 [role="button"] {
     border-color: var(--color-clay);
     background-color: var(--color-clay);
-    color: #fffdf7;
+    color: var(--color-inverse);
 }
 
 button:hover,
@@ -31,7 +31,7 @@ button:focus,
 [role="button"]:focus {
     border-color: var(--color-clay-dark);
     background-color: var(--color-clay-dark);
-    color: #fffdf7;
+    color: var(--color-inverse);
 }
 
 button.secondary,
@@ -58,9 +58,9 @@ button.secondary:focus,
 
 button:disabled,
 button[disabled] {
-    border-color: rgba(117, 78, 45, 0.18);
-    background-color: rgba(117, 78, 45, 0.12);
-    color: rgba(45, 32, 24, 0.52);
+    border-color: var(--color-disabled-border);
+    background-color: var(--color-disabled-bg);
+    color: var(--color-disabled-text);
     opacity: 1;
 }
 

@@ -4,7 +4,7 @@
 
 .site-header-wrap {
     border-bottom: 1px solid var(--color-line);
-    background: rgba(251, 243, 228, 0.94);
+    background: var(--color-header);
 }
 
 .site-header {
@@ -60,13 +60,13 @@
     place-items: center;
     border-radius: 999px;
     background: var(--color-olive);
-    color: #fffdf7;
+    color: var(--color-inverse);
     font-size: 0.8rem;
 }
 
 .site-footer-wrap {
     border-top: 1px solid var(--color-line);
-    background: #efe0c7;
+    background: var(--color-footer);
 }
 
 .site-footer {
